@@ -76,11 +76,6 @@
             height: auto;
         }
 
-        .grid-item img[alt="Gambar 1"], .grid-item img[alt="Gambar 2"], .grid-item img[alt="Gambar 3"] {
-            /* Placeholder jika gambar tidak ditemukan */
-            content: url('https://via.placeholder.com/200'); 
-        }
-
         footer {
             text-align: center;
             padding: 10px;
@@ -115,7 +110,7 @@
         .social-links a {
             display: inline-block;
             margin: 0 10px;
-            color: white; /* Warna teks */
+            color: white; /* Warna ikon */
             font-size: 30px; /* Ukuran ikon */
             padding: 10px; /* Jarak dalam ikon */
             border-radius: 50%; /* Membuat ikon berbentuk bulat */
@@ -123,20 +118,12 @@
         }
 
         /* Gaya untuk setiap ikon sosial media */
-        .social-links a.tiktok1 {
-            background-color: #69C9D0; /* Warna latar TikTok untuk akun pertama */
+        .social-links a.tiktok {
+            background-color: #69C9D0; /* Warna latar TikTok */
         }
 
-        .social-links a.tiktok2 {
-            background-color: #69C9D0; /* Warna latar TikTok untuk akun kedua */
-        }
-
-        .social-links a.instagram1 {
-            background-color: #E1306C; /* Warna latar Instagram untuk akun pertama */
-        }
-
-        .social-links a.instagram2 {
-            background-color: #E1306C; /* Warna latar Instagram untuk akun kedua */
+        .social-links a.instagram {
+            background-color: #E1306C; /* Warna latar Instagram */
         }
 
         .social-links a.whatsapp {
@@ -172,8 +159,7 @@
     <div class="container">
         <section id="home">
             <h2>Quotes Dari ku 3 tahun yang lalu</h2>
-            <p class="quote">"Cinta adalah segalanya, dan aku adalah segalanya untukmu. Ketika 
-                dunia mempertemukan kita, maka dunia pun merestui."</p>
+            <p class="quote">"Cinta adalah segalanya, dan aku adalah segalanya untukmu. Ketika dunia mempertemukan kita, maka dunia pun merestui"</p>
         </section>
 
         <section id="gallery">
@@ -182,6 +168,7 @@
                 <div class="grid-item"><img src="gambar1.jpg" alt="Gambar 1"></div>
                 <div class="grid-item"><img src="gambar2.jpg" alt="Gambar 2"></div>
                 <div class="grid-item"><img src="gambar3.jpg" alt="Gambar 3"></div>
+                <!-- Tambahkan lebih banyak gambar sesuai kebutuhan -->
             </div>
         </section>
 
@@ -208,16 +195,16 @@
             <h2>Kontak Kami</h2>
             <p>Email: info@bucin.com</p>
             <div class="social-links">
-                <a href="https://www.tiktok.com/@meiilovv?_t=8qdxYcnans8&_r=1" class="tiktok1" target="_blank">
+                <a href="https://www.tiktok.com/@meiilovv?_t=8qdxYcnans8&_r=1" class="tiktok" target="_blank">
                     <i class="fab fa-tiktok"></i>
                 </a>
-                <a href="https://www.tiktok.com/@hai_my_name?_t=8qdxbtps0JN&_r=1" class="tiktok2" target="_blank">
+                <a href="https://www.tiktok.com/@hai_my_name?_t=8qdxbtps0JN&_r=1" class="tiktok" target="_blank">
                     <i class="fab fa-tiktok"></i>
                 </a>
-                <a href="https://www.instagram.com/cch0kies/" class="instagram1" target="_blank">
+                <a href="https://www.instagram.com/cch0kies/" class="instagram" target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.instagram.com/farlfriii/" class="instagram2" target="_blank">
+                <a href="https://www.instagram.com/farlfriii/" class="instagram" target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="https://wa.me/085721932485" class="whatsapp" target="_blank">
@@ -229,3 +216,31 @@
             </div>
         </section>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Website Bucin. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+        function toggleGame(gameId) {
+            const gameElement = document.getElementById(gameId);
+            gameElement.style.display = gameElement.style.display === 'none' || gameElement.style.display === '' ? 'block' : 'none';
+        }
+
+        function checkAnswer() {
+            const answer = document.querySelector('.quiz input').value;
+            const result = document.getElementById('quizResult');
+            if (answer.toLowerCase() === 'cinta') {
+                result.textContent = 'Benar!';
+            } else {
+                result.textContent = 'Salah, coba lagi!';
+            }
+        }
+
+        function toggleSpotify() {
+            const spotifyFrame = document.getElementById('spotifyFrame');
+            spotifyFrame.style.display = spotifyFrame.style.display === 'none' || spotifyFrame.style.display === '' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
